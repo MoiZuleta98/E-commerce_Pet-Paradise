@@ -1,6 +1,9 @@
 {
   "name": "grupo_3_pet_paradise",
   "version": "1.0.0",
+  "engines": {
+    "node": "16.14.2"
+  },
   "description": "Todo lo que necesitas para tu mascota y para apoyar a los peludos sin hogar",
   "main": "app.js",
   "scripts": {
