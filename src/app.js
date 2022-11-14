@@ -50,6 +50,10 @@ app.use(cookies());
 app.use(userLoggedMiddleware);
 app.use(userRole);
 
+app.set('puerto',process.env.PORT || 3001)
+
+app.listen(app.get('puerto'), ()=> console.log(`Servidor escuchando en puerto ${app.get('puerto')}`));
+
 //? Para indicarle express la carpeta donde se encuentran los archivos estáticos
 
 app.use("/", routerIndex);
@@ -66,6 +70,3 @@ app.use('/api', apiProductsRouter);
 //   console.log("Servidor escuchando en puerto 3001");
 // });
 
-app.set('puerto',process.env.PORT || 3001)
-
-app.listen(app.get('puerto'), ()=> console.log(`Servidor escuchando en puerto ${app.get('puerto')}`));
