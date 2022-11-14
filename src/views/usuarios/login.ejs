@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head') %>
+
+  <body>
+    <%- include('../partials/header') %>
+
+      <form action="/user/login" method="POST">
+        <div class="login">
+          <div class="logIn__conteiner">
+            <div class="grupo_registro">
+              <label class="elementoA" for="email">EMAIL</label>
+              <input class="elementoB form-control" type="email" name="email" id="mail" placeholder="Ejemplo: liomessi@gmail.com" />
+              <% if (locals.errors && errors.email) { %>
+                <div class="text-danger">
+                  <%= errors.email.msg %>
+                </div>
+                <% } %>
+            </div>
+
+            <div class="grupo_registro">
+              <label class="elementoA" for="pass">CONTRASEÑA</label>
+              <input class="elementoB form-control" type="password" name="password" id="contraseña" />
+            </div>
+            
+            <div class="grupo_registro">
+              <label class="form-check-label">
+                <input type="checkbox" class="btn btn-primary" name="remember_user">Recordar mi usuario
+              </label>
+            </div>
+
+            <div class="crear_cuenta">
+              <input type="submit" value="Iniciar sesión" />
+              <p>
+                ¿No tenés cuenta?
+                <a class="inicia_sesion" href="/user/register">Crear cuenta</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </form>
+      <%- include('../partials/footer') %>
+  </body>
+
+</html>

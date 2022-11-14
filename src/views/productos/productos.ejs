@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head.ejs') %>
+  <body>
+    <%- include('../partials/header.ejs') %>
+
+    <div class="banner-product">
+      <!-- <img src="/images/banner-product(1).png" alt="Banner de productos"> -->
+    </div>
+
+    <main>
+      <div class="productos_alimentos">
+        <% if(result!=null && term!= null) { %>
+        <h2>Resultados de la busqueda: <%= term %></h2>
+        <% }else if(result!=null&&marcas!=null&&term==null) { %>
+        <h2>Todos los productos</h2>
+        <% }else if(marcas){ %> 
+        <h2>Todos los alimentos de marca: <%=  %></h2>
+        <% } %>
+      </div>
+
+      <div class="filtered_products">
+        <span class="filtered_top"> ORDENAR POR </span>
+        <span class="filtered_bottom"> FILTRAR </span>
+      </div>
+
+      <div class="container-pet">
+        <% for(let i= 0; i < marcas.length; i++){ %>
+        <article class="card">
+          <a href="/products/buscar?marca=<%= marcas[i].id%> "
+            ><span class="name_product"> <%= marcas[i].name%> </span></a
+          >
+        </article>
+
+        <% } %>
+      </div>
+
+      <div class="container-pet">
+        <% for(let i= 0; i < result.length; i++){ %>
+        <article class="card">
+          <img src="/images-back/productos/<%= result[i].image %>" alt="" />
+          <div>ENVIO GRATIS</div>
+          <a href="/products/<%= result[i].id%> "
+            ><span class="name_product"> <%= result[i].name%> </span></a
+          >
+        </article>
+
+        <% } %>
+      </div>
+    </main>
+
+    <%- include('../partials/footer') %>
+  </body>
+</html>

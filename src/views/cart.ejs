@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="images/iconoParadise2.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/03e8e208c1.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300;400&display=swap" rel="stylesheet">
+    <title>Carrito de compras</title>
+</head>
+<body class="cart">
+  <%- include('./partials/header') %>
+
+    <div class="title">
+        <h1><i class="fa-solid fa-cart-shopping"></i> Mi Carrito</h1>
+      </div>
+      <div class="maqueta__pc">
+        <div class="maq__con__vaciar__cart">
+          <div class="product__conteiner">
+            <section>
+              <div class="titulosProd">
+                <h2 class="prod" >Producto</h2>
+                <h2 class="cant">Cantidad</h2>
+                <h2 class="tot">Total</h2>
+              </div>
+  
+              <!--?  INICIO PRODUCTO 1 -->
+              <article class="card__art">
+                <div class="prod__cant__maqueta">
+                  <div class="img__conteiner">
+                    <img src="/images/product/prod_purina.png" alt="img-product" />
+                  </div>
+                  <div class="prod__cant__conteiner">
+                    <div class="desc__prod">
+                    <h4>
+                      Pro plan 23kg.
+                      <h3 class="marca__prod">Purina</h3>
+                    </h4>
+                  </div>
+  
+                  <div class="prod__container">
+                    <input class="sumayresta" type="button" value="-" />
+                    <input
+                      type="number"
+                      name="cantidad"
+                      id="cant"
+                      class="cant prod__cant__conteiner"
+                    />
+                    <input class="sumayresta" type="button" value="+" />
+                  </div>
+                  <h3 class="price__prod">$8.997,00</h3>
+                </div>
+  
+                <div class="tacho">
+                  <i class="fa-solid fa-trash-can"></i>
+                </div>
+              </article>
+  
+              <!--!  FIN PRODUCTO 1 -->
+              <!--?  INICIO PRODUCTO 2 -->
+  
+              <article class="card__art">
+                <div class="prod__cant__maqueta">
+                  <div class="img__conteiner">
+                    <img src="/images/product/prod_unik.png" alt="img-product" />
+                  </div>
+                  <div class="prod__cant__conteiner">
+                    <div class="desc__prod">
+                    <h4>
+                      Alimento premium para perro adulto 15kg.
+                      <h3 class="marca__prod">Ünik</h3>
+                    </h4>
+                  </div>
+  
+                  <div class="prod__container">
+                    <input class="sumayresta" type="button" value="-" />
+                    <input
+                      type="number"
+                      name="cantidad"
+                      id="cant"
+                      class="cant prod__cant__conteiner"
+                    />
+                    <input class="sumayresta" type="button" value="+" />
+                  </div>
+                  <h3 class="price__prod">$7.614,00</h3>
+                </div>
+  
+                <div class="tacho">
+                  <i class="fa-solid fa-trash-can"></i>
+                </div>
+              </article>
+  
+              <!--!  FIN PRODUCTO 2 -->
+              <!--?  INICIO PRODUCTO 3 -->
+  
+              <article class="card__art">
+                <div class="prod__cant__maqueta">
+                  <div class="img__conteiner">
+                    <img src="/images/product/prod_oldprince.png" alt="img-product" />
+                  </div>
+                  <div class="prod__cant__conteiner">
+                    <div class="desc__prod">
+                    <h4>
+                      Alimento para perro sabor a cerdo y legumbres naturales
+                      <h3 class="marca__prod">Old Prince</h3>
+                    </h4>
+                  </div>
+  
+                  <div class="prod__container">
+                    <input class="sumayresta" type="button" value="-" />
+                    <input
+                      type="number"
+                      name="cantidad"
+                      id="cant"
+                      class="cant prod__cant__conteiner"
+                    />
+                    <input class="sumayresta" type="button" value="+" />
+                  </div>
+                  <h3 class="price__prod">$44.580,00</h3>
+                </div>
+  
+                <div class="tacho">
+                  <i class="fa-solid fa-trash-can"></i>
+                </div>
+              </article>
+  
+              <!--!  FIN PRODUCTO 3 -->
+              
+            </section>
+          </div>
+          <div class="vaciar__carro">
+            <a href="#">Vaciar carrito</a>
+          </div>
+        </div>
+        <!--? CÓDIGO PROMOCIONAL -->
+        <div class="barra__derecha">
+          <div class="prom__conteiner">
+            <p class="code">
+              <i class="fa-solid fa-tag"></i> Ingresá tu código promocional
+            </p>
+            <div class="valid__code">
+              <input class="insert__code" type="text" placeholder="Código" />
+              <input class="insert__btn" type="button" value="Aplicar" />
+            </div>
+          </div>
+          <!--? inicio RESUMEN DE COMPRA  -->
+          <div class="resume__conteiner">
+            <div class="title__resume">
+              <p>Resumen de la compra</p>
+            </div>
+            <div class="price__products__conteiner">
+              <div class="price__products">
+                <p>Precio de mis productos</p>
+              </div>
+              <div class="price__products__item">
+                <p>$68.035,00</p>
+              </div>
+            </div>
+            <div class="total__disc__conteiner">
+              <div class="total__disc">
+                <p>Descuentos</p>
+              </div>
+              <div class="total__disc__item">
+                <p>$-6.844,00</p>
+              </div>
+            </div>
+            <div class="total__compra__conteiner">
+              <div class="total__compra">
+                <p>Total de mis productos</p>
+              </div>
+              <div class="total__compra__item">
+                <p>$61.191,00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="buttons">
+        <div class="cont__compra">
+          <input
+            class="cont__compra__button"
+            type="button"
+            value="Continuar compra"
+          />
+        </div>
+        <div class="elegirmasproductos">
+          <a class="mas__productos" href="#">Elegir más productos</a>
+        </div>
+      </div>
+  
+
+
+
+</div>
+<!-- <div><h2>Pet Paradise crece con tu ayuda, finaliza la compra y haz feliz a un animalito!</h2></div>
+<div>
+    <input type="submit" value="Finalizar compra">
+    <input type="reset" value="Cancelar Compra">
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<footer>
+    <div class="footer-category">
+        <p><strong>Categorias</strong></p>
+        <ul>
+            <li><a href="#">Perros <i class="fa-solid fa-dog"></i></a></li>
+            <li><a href="#">Gatos <i class="fa-solid fa-cat"></i></a></li>
+            <li><a href="#">Alimentos <i class="fa-solid fa-bone"></i></a></li>
+            <li><a href="#">Juguetes <i class="fa-solid fa-shield-dog"></i></a></li>
+            <li><a href="#">Adopción <i class="fa-solid fa-paw"></i></a></li>
+        </ul>
+    </div>
+    <div class="footer-fee">
+        <p><strong>Pagá con tarjeta o en efectivo</strong></p>
+        <i class="icons-footer fa-solid fa-credit-card"></i>
+        <i class="fa-brands fa-cc-visa"></i>
+        <i class="fa-brands fa-cc-mastercard"></i>
+        <i class="fa-solid fa-money-bill"></i>
+
+    </div>
+    <div class="footer-contacts">
+        <p><strong>Contáctanos</strong></p>
+        <ul>
+            <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-facebook-messenger"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+            <li><a href="mailto:moiseszuleta02@hotmail.com;juan.solis.trabajo@gmail.com;valentinlanzillotta@hotmail.com;andrea.aguah@gmail.com"><i class="fa-solid fa-envelope"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+        </ul>
+    </div>
+    <div class="copyright">
+        <p>Copyright © 2022 Petparadise S.R.L.</p>
+    </div>
+</footer>
+
+
+
+
+
+</body>
+</html>

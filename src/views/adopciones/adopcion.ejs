@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("./partialsAdopciones/headAdopciones.ejs") %>
+  <body>
+    <%- include("./partialsAdopciones/headerAdopciones.ejs") %>
+
+    <section id="help" class="container__center">
+      <h1>Descubre como adoptar a uno de nuestros peludos</h1>
+      <div class="help__cards--container center__row">
+        <div class="help__card container__center">
+          <span class="card__title">Perros</span>
+          <h3>Dale un hogar a un perrito</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere
+            quam ex neque.
+          </p>
+          <div class="card__link container__center">
+            <a href="/adopcion/perros">Adopta Ahora</a>
+          </div>
+        </div>
+        <div class="help__card container__center">
+          <span class="card__title">Gatos</span>
+          <h3>Siempre listos para dejarse consentir</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere
+            quam ex neque.
+          </p>
+          <div class="card__link container__center">
+            <a href="/adopcion/gatos">Adopta Ahora</a>
+          </div>
+        </div>
+        <div class="help__card container__center">
+          <span class="card__title">Otros Animales</span>
+          <h3>
+            En Pet Paradise tenemos muchos más animales que quieren un hogar
+          </h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere
+            quam ex neque.
+          </p>
+          <div class="card__link container__center">
+            <a href="/adopcion/otrosAnimales">Adopta Ahora</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="product1" class="section-p1">
+      <div class="pro-container">
+        <% for(let i=0; i < adopcionPet.length ; i++){ %>
+        <div class="pro">
+          <img
+            src="/images-back/imagenesAdopcion/<%=adopcionPet[i].picturePet %>"
+            alt="" />
+          <div class="des">
+            <h5><%= adopcionPet[i].namePet %></h5>
+            <span><%= adopcionPet[i].sizeNewPet %></span>
+
+            <div class="star">
+              <i class="fas fa-solid fa-dog"></i>
+            </div>
+            <h4>
+              <%= adopcionPet[i].edadPet %> - <%= adopcionPet[i].gender %>
+            </h4>
+          </div>
+          <a class="house" href="#"><i class="fa-solid fa-house"></i></a>
+        </div>
+        <%}%>
+      </div>
+    </section>
+
+    <%- include("./partialsAdopciones/galleryAdopciones.ejs") %>
+    <%-include("./partialsAdopciones/formAdopciones.ejs") %>
+    <%-include("./partialsAdopciones/footerAdopciones.ejs") %>
+  </body>
+</html>
