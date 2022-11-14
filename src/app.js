@@ -62,6 +62,10 @@ app.use("/adopcion", routerAdopcion);
 app.use("/api", routerAPI);
 app.use('/api', apiProductsRouter);
 
-app.listen(3001, () => {
-  console.log("Servidor escuchando en puerto 3001");
-});
+// app.listen(3001, () => {
+//   console.log("Servidor escuchando en puerto 3001");
+// });
+
+app.set('puerto',process.env.PORT || 3001)
+
+app.listen(app.get('puerto'), ()=> console.log(`Servidor escuchando en puerto ${app.get('puerto')}`));

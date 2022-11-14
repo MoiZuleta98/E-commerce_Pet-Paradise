@@ -4,7 +4,8 @@
   "description": "Todo lo que necesitas para tu mascota y para apoyar a los peludos sin hogar",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon  src/app.js",
+    "dev": "nodemon  src/app.js",
+    "start": "node app",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
