@@ -8,7 +8,7 @@ var cors = require('cors')
 const session = require("express-session");
 const cookies = require("cookie-parser");
 
-const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
+// const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
 const userRole = require("./middlewares/userRole");
 //? Requerir el middleware que controla si el usuario está o no Logueado
 
@@ -47,7 +47,7 @@ app.use(
 app.use(cors({origin: "*",}))
 
 app.use(cookies());
-app.use(userLoggedMiddleware);
+// app.use(userLoggedMiddleware);
 app.use(userRole);
 
 app.set('puerto',process.env.PORT || 3001)
