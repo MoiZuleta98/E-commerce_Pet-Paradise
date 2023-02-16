@@ -82,4 +82,6 @@ database: process.env.DB_NAME || "petparadise_db"
 
 app.use(conn(mysql, dbConfig, "single"))
 
+app.use(express.json())
+
 app.listen(app.get('puerto'), ()=> console.log(`Servidor escuchando en puerto ${app.get('puerto')}`));
