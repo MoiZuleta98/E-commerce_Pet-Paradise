@@ -1,5 +1,6 @@
 require("dotenv").config();
 const mysql = require('mysql2');
+conn = require("express-myconnection")
 
 const express = require("express");
 const app = express();
@@ -71,11 +72,14 @@ app.use('/api', apiProductsRouter);
 
 app.set('puerto',process.env.PORT || 3001)
 
-app.listen(app.get('puerto'), ()=> console.log(`Servidor escuchando en puerto ${app.get('puerto')}`));
-myConnection = mysql.createConnection({ 
+const dbConfig = {
 host: process.env.DB_HOST || "localhost",
 port: process.env.DB_PORT || "3306",
 user: process.env.DB_USER || "root",
 password: process.env.DB_PASSWORD ||"",
 database: process.env.DB_NAME || "petparadise_db"
-})
+}
+
+app.use(conn(mysql, dbConfig, "single"))
+
+app.listen(app.get('puerto'), ()=> console.log(`Servidor escuchando en puerto ${app.get('puerto')}`));
