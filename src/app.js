@@ -1,3 +1,6 @@
+require("dotenv").config();
+const mysql = require('mysql2');
+
 const express = require("express");
 const app = express();
 const path = require("path");
@@ -62,6 +65,17 @@ app.use("/adopcion", routerAdopcion);
 app.use("/api", routerAPI);
 app.use('/api', apiProductsRouter);
 
-app.listen(3001, () => {
-  console.log("Servidor escuchando en puerto 3001");
-});
+// app.listen(3001, () => {
+//   console.log("Servidor escuchando en puerto 3001");
+// });
+
+app.set('puerto',process.env.PORT || 3001)
+
+app.listen(app.get('puerto'), ()=> console.log(`Servidor escuchando en puerto ${app.get('puerto')}`));
+myConnection = mysql.createConnection({ 
+host: process.env.DB_HOST || "localhost",
+port: process.env.DB_PORT || "3306",
+user: process.env.DB_USER || "root",
+password: process.env.DB_PASSWORD ||"",
+database: process.env.DB_NAME || "petparadise_db"
+})
